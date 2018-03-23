@@ -5,8 +5,28 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApplicationZinseszins"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="Zinseszinsberechnung" Height="350" Width="525">
     <Grid>
+        <Label x:Name="label_anfangskaptial" Grid.Row="0" Grid.Column="0" Content="Anfangskaptial" FontSize="16"></Label>
+        <TextBox x:Name="textbox_anfangskaptial" Grid.Row="0" Grid.Column="1" Text="{Binding Path=Anfangskapital}"></TextBox>
+        <Label x:Name="label_zinsfuss" Grid.Row="1" Grid.Column="0" Content="Zinsfuss" FontSize="16"></Label>
+        <TextBox x:Name="textbox_zinsfuss" Grid.Row="1" Grid.Column="1" Text="{Binding Path=Zinsfuss}"></TextBox>
+        <Label x:Name="label_laufzeit" Grid.Row="2" Grid.Column="0" Content="Laufzeit" FontSize="16"></Label>
+        <TextBox x:Name="textbox_laufzeit" Grid.Column="1" Grid.Row="2" Text="{Binding Path=Laufzeit}"></TextBox>
+        <Button x:Name="button_berechnen" Grid.Row="3" Grid.Column="0" Content="Berechnen" FontSize="16" Grid.ColumnSpan="2" Click="button_berechnen_Click"></Button>
+        <Label x:Name="label_endkapital" Grid.Row="4" Grid.Column="0" Content="Endkapital" FontSize="16"></Label>
+        <TextBox x:Name="textbox_endkaptial" Grid.Column="1" Grid.Row="4" Text="{Binding Path=Endkapital, Mode=OneWay}" IsEnabled="False" ></TextBox>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
         
     </Grid>
 </Window>

@@ -20,9 +20,20 @@ namespace WpfApplicationZinseszins
     /// </summary>
     public partial class MainWindow : Window
     {
+        private Zinsberechnung z1;
         public MainWindow()
         {
             InitializeComponent();
+            z1 = new Zinsberechnung();
+            z1.Anfangskapital = 1000;
+            z1.Zinsfuss = 10;
+            z1.Laufzeit = 5;
+            this.DataContext = z1;
+        }
+
+        private void button_berechnen_Click(object sender, RoutedEventArgs e)
+        {            
+           z1.berechneEndkapital();         
         }
     }
 }
